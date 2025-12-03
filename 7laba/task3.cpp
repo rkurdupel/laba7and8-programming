@@ -22,7 +22,7 @@ int main() {
 
     cout << "Введіть кількість студентів N: ";
     cin >> N;
-    cin.ignore(10000, '\n'); 
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     char** surnames = new char*[N];     
     char** recordNums = new char*[N];   
@@ -40,7 +40,7 @@ int main() {
         for (int j = 0; j < 5; j++) {
             cin >> marks[i][j];
         }
-        cin.ignore(10000, '\n'); 
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
         if (isPerfectStudent(marks[i])) {
             perfectCount++;
